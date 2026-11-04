@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarberBook</title>
+</head>
+<body>
+  <header>
+    <h1>BarberBook</h1>
+    <nav>
+      <a href="#register">Register</a>
+      <a href="#book">Book</a>
+      <a href="#services">Services</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="register">
+      <h2>Create an account</h2>
+      <form action="/api/register" method="POST">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <section id="book">
+      <h2>Book an appointment</h2>
+      <form action="/api/bookings" method="POST">
+        <label for="service">Service</label>
+        <select id="service" name="service" required>
+          <option value="">Choose a service</option>
+          <option value="haircut">Haircut</option>
+          <option value="beard">Beard trim</option>
+          <option value="combo">Haircut + beard</option>
+        </select>
+
+        <label for="barber">Barber</label>
+        <select id="barber" name="barber" required>
+          <option value="">Any available barber</option>
+          <option value="1">Ravi</option>
+          <option value="2">Imran</option>
+        </select>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="notes">Notes (optional)</label>
+        <textarea id="notes" name="notes"></textarea>
+
+        <button type="submit">Book appointment</button>
+      </form>
+    </section>
+
+    <section id="services">
+      <h2>Services and prices</h2>
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Price (₹)</th><th>Duration</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Haircut</td><td>300</td><td>30 min</td></tr>
+          <tr><td>Beard trim</td><td>150</td><td>15 min</td></tr>
+          <tr><td>Haircut + beard</td><td>400</td><td>45 min</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>BarberBook 2.0, a learning project</p>
+  </footer>
+</body>
+</html>
