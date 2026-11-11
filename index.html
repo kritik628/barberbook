@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BarberBook</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -37,7 +39,9 @@
 
     <section id="book">
       <h2>Book an appointment</h2>
-      <form action="/api/bookings" method="POST">
+
+      <form id="booking-form" action="/api/bookings" method="POST">
+
         <label for="service">Service</label>
         <select id="service" name="service" required>
           <option value="">Choose a service</option>
@@ -56,12 +60,15 @@
         <label for="date">Date</label>
         <input type="date" id="date" name="date" required>
 
-        <label for="time">Time</label>
-        <input type="time" id="time" name="time" required>
+        <label>Available slots</label>
+        <div id="slots">Choose a date to see slots</div>
+
+        <input type="hidden" id="time" name="time">
 
         <label for="notes">Notes (optional)</label>
         <textarea id="notes" name="notes"></textarea>
-
+          <p id="summary"></p>
+<p id="message"></p>
         <button type="submit">Book appointment</button>
       </form>
     </section>
@@ -70,12 +77,28 @@
       <h2>Services and prices</h2>
       <table>
         <thead>
-          <tr><th>Service</th><th>Price (₹)</th><th>Duration</th></tr>
+          <tr>
+            <th>Service</th>
+            <th>Price (₹)</th>
+            <th>Duration</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>Haircut</td><td>300</td><td>30 min</td></tr>
-          <tr><td>Beard trim</td><td>150</td><td>15 min</td></tr>
-          <tr><td>Haircut + beard</td><td>400</td><td>45 min</td></tr>
+          <tr>
+            <td>Haircut</td>
+            <td>300</td>
+            <td>30 min</td>
+          </tr>
+          <tr>
+            <td>Beard trim</td>
+            <td>150</td>
+            <td>15 min</td>
+          </tr>
+          <tr>
+            <td>Haircut + beard</td>
+            <td>400</td>
+            <td>45 min</td>
+          </tr>
         </tbody>
       </table>
     </section>
@@ -84,5 +107,5 @@
   <footer>
     <p>BarberBook 2.0, a learning project</p>
   </footer>
-</body>
+<script src="script.js"></script></body>
 </html>

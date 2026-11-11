@@ -70,3 +70,5 @@ footer { text-align: center; padding: 1.5rem; color: #888; }
   main { grid-template-columns: 1fr; }
   header { flex-direction: column; gap: 0.5rem; }
 }
+#slots { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+#slots button { margin-top: 0; padding: 0.4rem 0.8rem; }
